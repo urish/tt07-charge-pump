@@ -24,3 +24,7 @@ Post layout simulation showing the output voltage `x1.vout` and the divided outp
 The following graph shows the input clock, the intermediate voltages at the output of each stage, the output voltage, and the divided voltage as they rise during the first 10 us of operation.
 
 ![output voltage and intermediate voltages](sim_graph_stages.png)
+
+## Project layout
+
+![Project layout](layout.png)
