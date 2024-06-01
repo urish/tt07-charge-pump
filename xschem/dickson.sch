@@ -5,8 +5,8 @@ K {}
 V {}
 S {}
 E {}
-T {ua[0] = vout / 6} 1040 130 0 0 0.4 0.4 {}
-T {since tt06 can only output 1v8} 1040 170 0 0 0.25 0.25 {}
+T {ua[0] = vout / 2} 1040 130 0 0 0.4 0.4 {}
+T {since TT07 can only output 3v3} 1040 170 0 0 0.25 0.25 {}
 N -320 100 -300 100 {
 lab=clk}
 N -300 100 -300 150 {
@@ -109,21 +109,29 @@ N 870 210 870 230 {
 lab=VGND}
 N 870 50 870 70 {
 lab=vout}
-N 840 140 850 140 {
-lab=VGND}
-N 850 100 850 140 {
-lab=VGND}
-N 850 140 850 180 {
-lab=VGND}
 N -310 -0 -260 0 {
 lab=VPWR}
 N -260 0 -90 -0 {
 lab=VPWR}
 N -90 -0 40 0 {
 lab=VPWR}
-N 800 140 840 140 {
+N 870 100 890 100 {
+lab=vout}
+N 870 60 890 60 {
+lab=vout}
+N 890 60 890 100 {
+lab=vout}
+N 870 180 890 180 {
+lab=ua[0]}
+N 890 140 890 180 {
+lab=ua[0]}
+N 830 100 830 140 {
+lab=ua[0]}
+N 830 140 870 140 {
+lab=ua[0]}
+N 830 180 830 220 {
 lab=VGND}
-N 800 140 800 150 {
+N 830 220 870 220 {
 lab=VGND}
 C {devices/ipin.sym} -320 100 0 0 {name=p2 lab=clk}
 C {sky130_fd_pr/pfet3_01v8.sym} -280 50 0 0 {name=M1
@@ -255,18 +263,6 @@ C {devices/title.sym} -220 370 0 0 {name=l2 author="Uri Shaked"}
 C {devices/lab_wire.sym} 230 10 0 0 {name=p8 sig_type=std_logic lab=stage1}
 C {devices/lab_wire.sym} 370 10 0 0 {name=p9 sig_type=std_logic lab=stage2}
 C {devices/lab_wire.sym} 510 10 0 0 {name=p10 sig_type=std_logic lab=stage3}
-C {sky130_fd_pr/res_xhigh_po_0p35.sym} 870 100 0 0 {name=R2
-W=0.35
-L=2500
-model=res_xhigh_po_0p35
-spiceprefix=X
-mult=1}
-C {sky130_fd_pr/res_xhigh_po_0p35.sym} 870 180 0 0 {name=R1
-W=0.35
-L=500
-model=res_xhigh_po_0p35
-spiceprefix=X
-mult=1}
 C {devices/lab_pin.sym} 840 50 0 0 {name=p12 sig_type=std_logic lab=vout}
 C {devices/opin.sym} 950 140 0 0 {name=p11 lab=ua[0]}
 C {devices/ipin.sym} -310 0 0 0 {name=p13 lab=VPWR}
@@ -275,5 +271,32 @@ C {vgnd.sym} -260 200 0 0 {name=l1 lab=VGND}
 C {vgnd.sym} -90 200 0 0 {name=l3 lab=VGND}
 C {vgnd.sym} 610 230 0 0 {name=l4 lab=VGND}
 C {vgnd.sym} 870 230 0 0 {name=l6 lab=VGND}
-C {vgnd.sym} 800 150 0 0 {name=l5 lab=VGND}
 C {devices/lab_pin.sym} 690 50 0 1 {name=p1 sig_type=std_logic lab=vout}
+C {sky130_fd_pr/pfet_g5v0d10v5.sym} 850 100 0 0 {name=M9
+L=40
+W=0.42
+nf=1
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=pfet_g5v0d10v5
+spiceprefix=X
+}
+C {sky130_fd_pr/pfet_g5v0d10v5.sym} 850 180 0 0 {name=M10
+L=40
+W=0.42
+nf=1
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=pfet_g5v0d10v5
+spiceprefix=X
+}

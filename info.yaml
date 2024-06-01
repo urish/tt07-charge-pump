@@ -5,13 +5,13 @@ project:
   discord:      "urish"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
   description:  "Pumps the input voltage up to ~5.4V"      # One line description of what your project does
   language:     "Analog" # other examples include Verilog, Amaranth, VHDL, etc
-  clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
+  clock_hz:     2000000       # Clock frequency in Hz (or 0 if not applicable)
 
   # How many tiles your design occupies? A single tile is about 167x108 uM.
   tiles: "1x2"          # Valid values: 1x1 (digital only), 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
 
   # How many analog pins does your project use?
-  analog_pins: 2        # Valid values: 0 to 6
+  analog_pins: 1        # Valid values: 0 to 6
 
   # Your top module name must start with "tt_um_". Make it unique by including your github username:
   top_module:  "tt_um_urish_charge_pump"
