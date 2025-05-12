@@ -1,1 +1,4 @@
 pdk_lib.spice
+testbench_*_khz.spice
+voltage.txt
+frequency_results.csv
